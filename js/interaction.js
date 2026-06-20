@@ -84,7 +84,8 @@ export function findInteractiveAncestor(object) {
         if (nameLC.includes('cube.010') || nameLC.includes('cube010') || 
             nameLC.includes('plane.027') || nameLC.includes('plane.019') || 
             nameLC.includes('plane.017') || nameLC.includes('plane.025') ||
-            nameLC.includes('plane.016') || nameLC.includes('plane.024')) {
+            nameLC.includes('plane.016') || nameLC.includes('plane.024') ||
+            nameLC.includes('plane.015') || nameLC.includes('plane.023')) {
             return { object: current, key: 'bilgisayar' };
         }
 
