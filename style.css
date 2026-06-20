@@ -1081,14 +1081,16 @@ body.cursor-grabbing #three-canvas {
     position: fixed;
     inset: 0;
     background: #000;
-    z-index: 9999;
+    z-index: -10;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out, z-index 0s 0.8s;
 }
 #fade-overlay.active {
+    z-index: 9999;
     opacity: 1;
     pointer-events: all;
+    transition: opacity 0.8s ease-in-out;
 }
 
 /* ── STARRY FUTURE GOALS MODAL ────────────── */
