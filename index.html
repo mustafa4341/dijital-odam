@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mustafa'nın Dijital Odası — İnteraktif 3D kişisel mekân. Odadaki nesnelere tıklayarak beni keşfedin.">
+    <title>Dijital Oda — Mustafa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=105">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ═══════════ LOADING SCREEN ═══════════ -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-icon">
+                <div class="room-outline">
+                    <svg viewBox="0 0 100 100" width="80" height="80">
+                        <polyline points="10,70 10,20 50,5 90,20 90,70 50,85 10,70" fill="none" stroke="url(#grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="50" y1="5" x2="50" y2="85" fill="none" stroke="url(#grad)" stroke-width="1.5" opacity="0.4"/>
+                        <line x1="10" y1="20" x2="90" y2="20" fill="none" stroke="url(#grad)" stroke-width="1.5" opacity="0.4"/>
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a78bfa"/>
+                                <stop offset="100%" style="stop-color:#6ee7b7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="loader-title">Dijital Oda</h1>
+            <p class="loader-subtitle">Mekân yükleniyor...</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0%</span>
+        </div>
+    </div>
+
+    <!-- ═══════════ HINT OVERLAY ═══════════ -->
+    <div id="hint-overlay">
+        <div class="hint-box">
+            <span class="hint-icon">🖱️</span>
+            <span>🖱️ Sürükle: Döndür · Scroll: Yakınlaş · Sağ tık: Kaydır · WASD: Hareket · Çift tıkla: Odaklan</span>
+        </div>
+    </div>
+
+    <!-- ═══════════ OBJECT TOOLTIP ═══════════ -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- ═══════════ MODAL ═══════════ -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-ai-ask" id="modal-ai-ask" title="Mustafa hakkında AI asistanına sor">🤖 Mustafa'ya Sor</button>
+            <button class="modal-close" id="modal-close" aria-label="Kapat">&times;</button>
+            <div class="modal-scroll-area">
+                <div class="modal-header">
+                    <span class="modal-icon" id="modal-icon"></span>
+                    <h2 class="modal-title" id="modal-title"></h2>
+                </div>
+                <div class="modal-body" id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ AI CHAT MODAL ═══════════ -->
+    <div id="ai-chat-modal" class="modal-overlay">
+        <div class="modal-container ai-chat-container">
+            <button class="modal-close" id="ai-chat-close" aria-label="Kapat">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🤖</span>
+                <div>
+                    <h2 class="modal-title">Mustafa'nın AI Asistanı</h2>
+                    <span class="ai-status"><span class="status-dot"></span> Çevrimiçi</span>
+                </div>
+            </div>
+            <div class="ai-chat-body">
+                
+                
+                <div class="ai-messages" id="ai-messages">
+                    <div class="ai-message bot">
+                        <div class="message-content">Merhaba! Ben Mustafa'nın yapay zekâ asistanıyım. Mustafa'nın projeleri, hedefleri, günlük rutini veya Pixel (kedisi) hakkında merak ettiğin her şeyi bana sorabilirsin!</div>
+                    </div>
+                </div>
+                
+                <div class="ai-typing" id="ai-typing">
+                    <span></span><span></span><span></span>
+                </div>
+                
+                <div class="ai-suggestions" id="ai-suggestions">
+                    <button class="suggestion-chip">Mustafa hangi teknolojileri biliyor?</button>
+                    <button class="suggestion-chip">Gelecek hedefleri nelerdir?</button>
+                    <button class="suggestion-chip">Pixel kimdir ve odadaki rolü nedir?</button>
+                    <button class="suggestion-chip">Günlük rutini nasıl?</button>
+                </div>
+            </div>
+            <div class="ai-chat-footer">
+                <input type="text" id="ai-chat-input" placeholder="Mustafa hakkında bir şey sorun..." />
+                <button id="ai-chat-send" aria-label="Gönder">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ RETRO TERMINAL MODAL ═══════════ -->
+    <div id="terminal-modal" class="modal-overlay">
+        <div class="modal-container terminal-container">
+            <button class="modal-close" id="terminal-close" aria-label="Kapat">&times;</button>
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">mustafa@dijital-oda:~</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-output" id="terminal-output">
+                    <p>Mustafa OS v1.2.0 (tty1)</p>
+                    <p>Sisteme hoş geldiniz. Yardım almak için 'help' yazın.</p>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">mustafa@dijital-oda:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ 3D CANVAS ═══════════ -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- ═══════════ FOOTER INFO ═══════════ -->
+    <div id="scene-info">
+        <span class="info-badge">
+            <span class="pulse-dot"></span>
+            İnteraktif 3D Mekân
+        </span>
+    </div>
+
+    <script type="module" src="app.js?v=105"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+Node [0]: "Plane" | Mesh [0]: "Plane"
+Node [1]: "Plane.001" | Mesh [1]: "Plane.001"
+Node [2]: "Plane.002" | Mesh [2]: "Plane.002"
+Node [3]: "Plane.003" | Mesh [3]: "Plane.003"
+Node [4]: "Plane.004" | Mesh [4]: "Plane.004"
+Node [5]: "Plane.005" | Mesh [5]: "Plane.005"
+Node [6]: "Plane.006" | Mesh [6]: "Plane.006"
+Node [7]: "Plane.009" | Mesh [7]: "Plane.008"
+Node [8]: "Plane.008" | Mesh [8]: "Plane.013"
+Node [9]: "Plane.007" | Mesh [9]: "Plane.016"
+Node [10]: "Plane.010" | Mesh [10]: "Plane.017"
+Node [11]: "Cube" | Mesh [11]: "Cube.001"
+Node [12]: "Plane.013" | Mesh [12]: "Plane.020"
+Node [13]: "Plane.014" | Mesh [13]: "Plane.021"
+Node [14]: "Cube.001" | Mesh [14]: "Cube.003"
+Node [15]: "Cube.002" | Mesh [15]: "Cube.004"
+Node [16]: "Cube.003" | Mesh [16]: "Cube.005"
+Node [17]: "Cube.004" | Mesh [17]: "Cube.006"
+Node [18]: "Cube.005" | Mesh [18]: "Cube.007"
+Node [19]: "Cube.006" | Mesh [19]: "Cube.008"
+Node [20]: "Plane.015" | Mesh [20]: "Plane.023"
+Node [21]: "Plane.016" | Mesh [21]: "Plane.024"
+Node [22]: "Plane.017" | Mesh [22]: "Plane.025"
+Node [23]: "Plane.018" | Mesh [23]: "Plane.026"
+Node [24]: "Cube.007" | Mesh [24]: "Cube.009"
+Node [25]: "Circle" | Mesh [25]: "Circle"
+Node [26]: "Cube.008" | Mesh [26]: "Cube.010"
+Node [27]: "Circle.001" | Mesh [27]: "Circle.002"
+Node [28]: "Cube.009" | Mesh [28]: "Cube.038"
+Node [29]: "Cube.010" | Mesh [29]: "Cube.034"
+Node [30]: "Plane.019" | Mesh [30]: "Plane.027"
+Node [31]: "ReflectionPlane"
+Node [32]: "Plane.020" | Mesh [31]: "Plane.007"
+Node [33]: "Cube.011" | Mesh [32]: "Cube"
+Node [34]: "_10"
+Node [35]: "_8"
+Node [36]: "_9"
+Node [37]: "j_tongue_tip_012_23"
+Node [38]: "j_tongue_mid_011_22" | Children: [37]
+Node [39]: "j_tongue_back_010_21" | Children: [38]
+Node [40]: "j_jaw_09_20" | Children: [39]
+Node [41]: "j_mid_eyebrow_013_24"
+Node [42]: "j_l_eye_014_25"
+Node [43]: "j_l_upper_eyelid_015_26"
+Node [44]: "j_l_lower_eyelid_016_27"
+Node [45]: "j_l_inner_eyebrow_017_28"
+Node [46]: "j_l_mid_eyebrow_018_29"
+Node [47]: "j_l_outer_eyebrow_019_30"
+Node [48]: "j_l_ear_020_31"
+Node [49]: "j_r_eye_021_32"
+Node [50]: "j_r_upper_eyelid_022_33"
+Node [51]: "j_r_lower_eyelid_023_34"
+Node [52]: "j_r_inner_eyebrow_024_35"
+Node [53]: "j_r_mid_eyebrow_025_36"
+Node [54]: "j_r_outer_eyebrow_026_37"
+Node [55]: "j_r_ear_027_38"
+Node [56]: "j_head_08_19" | Children: [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]
+Node [57]: "j_neck_1_07_18" | Children: [56]
+Node [58]: "j_neck_base_06_17" | Children: [57]
+Node [59]: "j_chest_028_39"
+Node [60]: "j_l_scap_029_40"
+Node [61]: "j_r_scap_030_41"
+Node [62]: "j_l_finger_035_46"
+Node [63]: "j_l_palm_034_45" | Children: [62]
+Node [64]: "j_l_wrist_033_44" | Children: [63]
+Node [65]: "j_l_forearm_036_47"
+Node [66]: "j_l_elbow_032_43" | Children: [64, 65]
+Node [67]: "j_l_humerous_031_42" | Children: [66]
+Node [68]: "j_r_finger_041_52"
+Node [69]: "j_r_palm_040_51" | Children: [68]
+Node [70]: "j_r_wrist_039_50" | Children: [69]
+Node [71]: "j_r_forearm_042_53"
+Node [72]: "j_r_elbow_038_49" | Children: [70, 71]
+Node [73]: "j_r_humerous_037_48" | Children: [72]
+Node [74]: "j_spine_4_05_16" | Children: [58, 59, 60, 61, 67, 73]
+Node [75]: "j_spine_3_04_15" | Children: [74]
+Node [76]: "j_spine_2_03_14" | Children: [75]
+Node [77]: "j_tail_6_048_59"
+Node [78]: "j_tail_5_047_58" | Children: [77]
+Node [79]: "j_tail_4_046_57" | Children: [78]
+Node [80]: "j_tail_3_045_56" | Children: [79]
+Node [81]: "j_tail_2_044_55" | Children: [80]
+Node [82]: "j_tail_1_043_54" | Children: [81]
+Node [83]: "j_spine_1_02_13" | Children: [76, 82]
+Node [84]: "j_l_toe_054_65"
+Node [85]: "j_l_ball_053_64" | Children: [84]
+Node [86]: "j_l_ankle_052_63" | Children: [85]
+Node [87]: "j_l_knee_051_62" | Children: [86]
+Node [88]: "j_l_femur_050_61" | Children: [87]
+Node [89]: "j_r_toe_059_70"
+Node [90]: "j_r_ball_058_69" | Children: [89]
+Node [91]: "j_r_ankle_057_68" | Children: [90]
+Node [92]: "j_r_knee_056_67" | Children: [91]
+Node [93]: "j_r_femur_055_66" | Children: [92]
+Node [94]: "j_hips_049_60" | Children: [88, 93]
+Node [95]: "j_body_00_12" | Children: [83, 94]
+Node [96]: "j_camera_060_71"
+Node [97]: "j_root_01_11" | Children: [95, 96]
+Node [98]: "_rootJoint_6" | Children: [97]
+Node [99]: "GLTF_created_0_rootJoint" | Children: [98]
+Node [100]: "Object_12" | Mesh [33]: "Object_0"
+Node [101]: "Object_14" | Mesh [34]: "Object_1"
+Node [102]: "Object_16" | Mesh [35]: "Object_2"
+Node [103]: "GLTF_created_0" | Children: [34, 35, 36, 100, 101, 102, 99]
+Node [104]: "_5" | Children: [103]
+Node [105]: "RootNode_4" | Children: [104]
+Node [106]: "_3" | Children: [105]
+Node [107]: "cat.fbx_2" | Children: [106]
+Node [108]: "RootNode (model correction matrix)_1" | Children: [107]
+Node [109]: "RootNode (gltf orientation matrix)_0" | Children: [108]
+Node [110]: "GLTF_SceneRootNode" | Children: [109]
+Node [111]: "root" | Children: [110]
+Node [112]: "Sketchfab_model" | Children: [111]
+Node [113]: "Empty"
+Node [114]: "React-Logo_Material.002_0" | Mesh [36]: "React-Logo_Material.002_0"
+Node [115]: "React-Logo" | Children: [114]
+Node [116]: "RootNode" | Children: [115]
+Node [117]: "be9210d376244066bed9d265a7a3a60e.fbx" | Children: [116]
+Node [118]: "Sketchfab_model.001" | Children: [117]
+Node [119]: "js" | Mesh [37]: "Mesh"
+Node [120]: "js.001" | Mesh [38]: "Mesh.001"
+Node [121]: "js.002" | Mesh [39]: "Mesh.002"
+Node [122]: "five" | Mesh [40]: "Mesh.008"
+Node [123]: "js.003" | Mesh [41]: "Mesh.009"
+Node [124]: "python" | Mesh [42]: "Python-Dark.svg.003"
+Node [125]: "Globe"
+Node [126]: "HoloSupport" | Children: [125]
+Node [127]: "Scene" | Children: [126]
+Node [128]: "RootNode.001" | Children: [127]
+Node [129]: "Object_2" | Children: [128]
+Node [130]: "Globe.fbx" | Children: [129]
+Node [131]: "Sketchfab_model.002" | Children: [130]
+Node [132]: "Object_5" | Mesh [43]: "Object_0.001"
+Node [133]: "Cup_0" | Children: [132]
+Node [134]: "Object_7" | Mesh [44]: "Object_1.001"
+Node [135]: "Lid_1" | Children: [134]
+Node [136]: "Object_9" | Mesh [45]: "Object_2.001"
+Node [137]: "Sleeve_2" | Children: [136]
+Node [138]: "Coffe Cup_Parent_3" | Children: [133, 135, 137]
+Node [139]: "GLTF_SceneRootNode.001" | Children: [138]
+Node [140]: "root.001" | Children: [139]
+Node [141]: "Sketchfab_model.003" | Children: [140]
+Node [142]: "Tux-printable_1" | Mesh [46]: "Tux-printable_1"
+Node [143]: "Tux-printable" | Children: [142]
+Node [144]: "Root" | Children: [143]
+Node [145]: "Sketchfab_model.004" | Children: [144]
+Node [146]: "AmkleSupport"
+Node [147]: "AmkleSupport1"
+Node [148]: "Ankle3"
+Node [149]: "Ankle4"
+Node [150]: "AnkleJoint"
+Node [151]: "AnkleJoint1"
+Node [152]: "AnkleLeft"
+Node [153]: "AnkleNew2"
+Node [154]: "AnkleNew3"
+Node [155]: "Elbow2"
+Node [156]: "Finger11"
+Node [157]: "Finger8"
+Node [158]: "Finger9"
+Node [159]: "ShoulderJoint1"
+Node [160]: "UpperArm"
+Node [161]: "Wrist1"
+Node [162]: "ArmLeft" | Children: [155, 156, 157, 158, 159, 160, 161]
+Node [163]: "ArmLeft1"
+Node [164]: "pCylinder20"
+Node [165]: "pCylinder21"
+Node [166]: "pCylinder22"
+Node [167]: "Wrist2"
+Node [168]: "Elbow3" | Children: [164, 165, 166, 167]
+Node [169]: "ShoudlerJoint2" | Children: [163, 168]
+Node [170]: "ArmRight" | Children: [169]
+Node [171]: "Body"
+Node [172]: "Ears"
+Node [173]: "FootLeft"
+Node [174]: "FootRight"
+Node [175]: "Head_HeadRobot_0" | Mesh [47]: "Head_HeadRobot_0"
+Node [176]: "Head" | Children: [175]
+Node [177]: "HipLeft"
+Node [178]: "HipRight"
+Node [179]: "Knee"
+Node [180]: "Knee10"
+Node [181]: "Knee11"
+Node [182]: "Knee12"
+Node [183]: "Knee4"
+Node [184]: "Knee5"
+Node [185]: "Knee6"
+Node [186]: "Knee9"
+Node [187]: "KneeJoint"
+Node [188]: "KneeJoint4"
+Node [189]: "KneeJoint5"
+Node [190]: "KneeJoint6"
+Node [191]: "KneeLeft"
+Node [192]: "KneeRight"
+Node [193]: "LegLeft"
+Node [194]: "Neck"
+Node [195]: "Neck2"
+Node [196]: "Neck3"
+Node [197]: "pCylinder23_LegsRobot_0" | Mesh [48]: "pCylinder23_LegsRobot_0"
+Node [198]: "pCylinder23" | Children: [197]
+Node [199]: "pCylinder24"
+Node [200]: "pCylinder4"
+Node [201]: "polySurface15"
+Node [202]: "polySurface22"
+Node [203]: "polySurface24"
+Node [204]: "polySurface29"
+Node [205]: "polySurface30"
+Node [206]: "Shoulders"
+Node [207]: "RootNode.002" | Children: [146, 147, 148, 149, 150, 151, 152, 153, 154, 162, 170, 171, 172, 173, 174, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 198, 199, 200, 201, 202, 203, 204, 205, 206]
+Node [208]: "e09027e14e5f4993947d158105a6ecb8.fbx" | Children: [207]
+Node [209]: "Sketchfab_model.005" | Children: [208]
+Node [210]: "Plane.011" | Mesh [49]: "Plane.009"
+Node [211]: "10436_Cactus_v1_max2010_it2" | Mesh [50]: "10436_Cactus_v1_max2010_it2"
+Node [212]: "brownbook_brownbook_0" | Mesh [51]: "brownbook_brownbook_0"
+Node [213]: "brownbook" | Children: [212]
+Node [214]: "greenbook_greenbook_0" | Mesh [52]: "greenbook_greenbook_0"
+Node [215]: "greenbook" | Children: [214]
+Node [216]: "RootNode.003" | Children: [213, 215]
+Node [217]: "4ff141940531472785275f76f6940460.fbx" | Children: [216]
+Node [218]: "Sketchfab_model.006" | Children: [217]
+Node [219]: "Object_4" | Mesh [53]: "Object_0.002"
+Node [220]: "Object_5.001" | Mesh [54]: "Object_1.002"
+Node [221]: "Object_6" | Mesh [55]: "Object_2.002"
+Node [222]: "Object_7.001" | Mesh [56]: "Object_3"
+Node [223]: "Books_Magazines_0" | Children: [219, 220, 221, 222]
+Node [224]: "GLTF_SceneRootNode.002" | Children: [223]
+Node [225]: "root.002" | Children: [224]
+Node [226]: "Sketchfab_model.007" | Children: [225]
+Node [227]: "Empty.002"
+Node [228]: "Empty.003"
+Node [229]: "HoloSupport.001"
+Node [230]: "Scene.001" | Children: [229]
+Node [231]: "RootNode.004" | Children: [230]
+Node [232]: "Object_2.001" | Children: [231]
+Node [233]: "Globe.fbx.001" | Children: [232]
+Node [234]: "Sketchfab_model.008" | Children: [233]
+Node [235]: "Globe.002"
+Node [236]: "HoloSupport_Objet_0" | Mesh [57]: "HoloSupport_Objet_0.002"
+Node [237]: "HoloSupport.002" | Children: [235, 236]
+Node [238]: "Scene.002" | Children: [237]
+Node [239]: "RootNode.005" | Children: [238]
+Node [240]: "Object_2.002" | Children: [239]
+Node [241]: "Globe.fbx.002" | Children: [240]
+Node [242]: "Sketchfab_model.009" | Children: [241]
+Node [243]: "Globe_Objet_0" | Mesh [58]: "Globe_Objet_0.010"
+Node [244]: "Cube.012"
+Node [245]: "Sphere_Material.001_0" | Mesh [59]: "Sphere_Material.001_0"
+Node [246]: "Sphere" | Children: [245]
+Node [247]: "Sphere.001_Material.001_0" | Mesh [60]: "Sphere.001_Material.001_0"
+Node [248]: "Sphere.001" | Children: [247]
+Node [249]: "RootNode.006" | Children: [244, 246, 248]
+Node [250]: "753311a919804389a797a232292b9d56.fbx" | Children: [249]
+Node [251]: "Sketchfab_model.010" | Children: [250]
+Node [252]: "Mesh_0.005_Material_0.001_0" | Mesh [61]: "Mesh_0.005_Material_0.001_0"
+Node [253]: "Mesh_0.005" | Children: [252]
+Node [254]: "RootNode.007" | Children: [253]
+Node [255]: "cat food bowl.fbx" | Children: [254]
+Node [256]: "Sketchfab_model.011" | Children: [255]
+Node [257]: "CPU Plainde"
+Node [258]: "Keyboarde"
+Node [259]: "Monitor Plainde"
+Node [260]: "Mousede_Material.005_0" | Mesh [62]: "Mousede_Material.005_0"
+Node [261]: "Mousede" | Children: [260]
+Node [262]: "RootNode.008" | Children: [257, 258, 259, 261]
+Node [263]: "LowPolyPSXoldpc.fbx" | Children: [262]
+Node [264]: "Sketchfab_model.012" | Children: [263]
+Node [265]: "oil_lantern" | Mesh [63]: "oil_lantern"
