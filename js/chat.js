@@ -11,7 +11,7 @@ const aiChatInput = document.getElementById('ai-chat-input');
 const aiChatSend = document.getElementById('ai-chat-send');
 const aiTyping = document.getElementById('ai-typing');
 
-export let geminiApiKey = localStorage.getItem('gemini_api_key') || '';
+export let geminiApiKey = localStorage.getItem('gemini_api_key') || 'AQ.Ab8RN6L4r6DDio77Gd6irO5KqLT845WPNiBgJEDPCsKYhPcY_A';
 export let customSystemPrompt = localStorage.getItem('gemini_system_prompt') || systemInstructionText.trim();
 
 // Load saved settings
