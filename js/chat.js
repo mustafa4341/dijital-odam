@@ -1,4 +1,4 @@
-import { systemInstructionText } from './config.js?v=106';
+import { systemInstructionText } from './config.js?v=107';
 
 // DOM Elements
 const apiKeyInput = document.getElementById('api-key-input');

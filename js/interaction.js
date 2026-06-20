@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import { scene, camera, controls } from './scene.js?v=106';
-import { allMeshes, roomBounds } from './loader.js?v=106';
-import { interactiveData } from './config.js?v=106';
-import { openModal, isModalOpen, tooltip, isBlockingClicks } from './ui.js?v=106';
+import { scene, camera, controls } from './scene.js?v=107';
+import { allMeshes, roomBounds } from './loader.js?v=107';
+import { interactiveData } from './config.js?v=107';
+import { openModal, isModalOpen, tooltip, isBlockingClicks } from './ui.js?v=107';
 
 export const mouse = new THREE.Vector2();
 const raycaster = new THREE.Raycaster();

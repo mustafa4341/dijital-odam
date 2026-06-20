@@ -1,4 +1,4 @@
-import { closeTerminalModal } from './ui.js?v=106';
+import { closeTerminalModal } from './ui.js?v=107';
 
 function handleTerminalCommand(cmd) {
     addTerminalLine(`mustafa@dijital-oda:~$ ${cmd}`, 'user');
@@ -16,7 +16,7 @@ function handleTerminalCommand(cmd) {
         return;
     }
     
-    if (cmdClean === 'cat pixel') {
+    if (cmdClean === 'cat pixel' || cmdClean === 'cat pıxel' || cmdClean === 'cat pixel.txt' || cmdClean === 'cat pıxel.txt' || cmdClean === 'pixel' || cmdClean === 'pıxel') {
         addTerminalLine("   /\\_/\\");
         addTerminalLine("  ( o.o )");
         addTerminalLine("   > ^ <");
@@ -24,12 +24,12 @@ function handleTerminalCommand(cmd) {
         return;
     }
     
-    if (cmdClean === 'whoami') {
+    if (cmdClean === 'whoami' || cmdClean === 'who am i' || cmdClean === 'who am ı' || cmdClean === 'who') {
         addTerminalLine("mustafa_karsu - Data Engineer & Backend Developer (Geleceğin Indie Hacker'ı)");
         return;
     }
     
-    if (cmdClean === 'skills' || cmdClean === 'cat skills.txt') {
+    if (cmdClean === 'skills' || cmdClean === 'skılls' || cmdClean === 'cat skills.txt' || cmdClean === 'cat skılls.txt') {
         let percent = 0;
         const barLength = 20;
         const output = document.getElementById('terminal-output');

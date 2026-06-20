@@ -1,7 +1,7 @@
-import { controls } from './scene.js?v=106';
-import { interactiveData } from './config.js?v=106';
-import { updateLiveSpotifyStatus } from './spotify.js?v=106';
-import { addBotMessage } from './chat.js?v=106';
+import { controls } from './scene.js?v=107';
+import { interactiveData } from './config.js?v=107';
+import { updateLiveSpotifyStatus } from './spotify.js?v=107';
+import { addBotMessage } from './chat.js?v=107';
 
 export let isModalOpen = false;
 export let currentActiveModalKey = null;
