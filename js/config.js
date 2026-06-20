@@ -247,7 +247,7 @@ export const interactiveData = {
     'bilgisayar': {
         icon: '💻',
         title: 'Workstation',
-        body: 'Workstation — Aktif Projelerim: FarmLog (Akıllı Tarım Yönetimi), Magic Stream (Streaming Platformu), Zinciri Kırma (Alışkanlık Takip), AI Okuma ve Konuşma Platformu.'
+        body: 'Workstation — Aktif Projelerim: FarmLog (Akıllı Tarım Yönetimi - Devam Ediyor), Magic Stream (Streaming Platformu - Bitti), Zinciri Kırma (Alışkanlık Takip - Bitti), AI Okuma ve Konuşma Platformu (Bitti), Küçük İşletme Talep Tahmincisi (Bitti).'
     },
     'poster_bayrak': {
         icon: '🇹🇷',
