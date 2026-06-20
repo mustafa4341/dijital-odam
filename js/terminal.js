@@ -11,15 +11,66 @@ function handleTerminalCommand(cmd) {
         return;
     }
     
+    if (cmdClean === 'sudo' || cmdClean.startsWith('sudo ')) {
+        addTerminalLine("Hata: Bu odada root yetkisine sahip tek kişi Mustafa'dır. Lütfen yetkinizi aşmayın! 🐧", 'error');
+        return;
+    }
+    
+    if (cmdClean === 'cat pixel') {
+        addTerminalLine("   /\\_/\\");
+        addTerminalLine("  ( o.o )");
+        addTerminalLine("   > ^ <");
+        addTerminalLine("Miyav! Sistemde bug bulunamadı, uyumaya devam ediyorum. 🐾");
+        return;
+    }
+    
+    if (cmdClean === 'whoami') {
+        addTerminalLine("mustafa_karsu - Data Engineer & Backend Developer (Geleceğin Indie Hacker'ı)");
+        return;
+    }
+    
+    if (cmdClean === 'skills' || cmdClean === 'cat skills.txt') {
+        let percent = 0;
+        const barLength = 20;
+        const output = document.getElementById('terminal-output');
+        if (output) {
+            const p = document.createElement('p');
+            p.style.margin = '4px 0';
+            p.style.color = '#a78bfa';
+            output.appendChild(p);
+            
+            const interval = setInterval(() => {
+                percent += 10;
+                const filledCount = Math.round((percent / 100) * barLength);
+                const emptyCount = barLength - filledCount;
+                const bar = '#'.repeat(filledCount) + '.'.repeat(emptyCount);
+                p.textContent = `Yükleniyor: [${bar}] ${percent}%`;
+                output.scrollTop = output.scrollHeight;
+                
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        addTerminalLine("[Data/AI] Python, Pandas, Scikit-learn, XGBoost, Prophet");
+                        addTerminalLine("[Backend] Go (Golang), MongoDB");
+                        addTerminalLine("[Frontend] React Native, Flutter");
+                    }, 100);
+                }
+            }, 60);
+        }
+        return;
+    }
+    
     if (cmdClean === 'help') {
         addTerminalLine("Mevcut Komutlar:");
-        addTerminalLine("  help       ➔  Bu yardım menüsünü gösterir.");
-        addTerminalLine("  about      ➔  Mustafa hakkında kısa bilgi verir.");
-        addTerminalLine("  skills     ➔  Mustafa'nın teknik becerilerini listeler.");
-        addTerminalLine("  neofetch   ➔  Sistem ve kullanıcı bilgilerini gösterir.");
-        addTerminalLine("  matrix     ➔  Retro yeşil kod yağmuru simülasyonunu başlatır.");
-        addTerminalLine("  clear      ➔  Ekranı temizler.");
-        addTerminalLine("  exit       ➔  Terminal ekranından çıkar.");
+        addTerminalLine("  help           ➔  Bu yardım menüsünü gösterir.");
+        addTerminalLine("  whoami         ➔  Kullanıcı kimliğini gösterir.");
+        addTerminalLine("  about          ➔  Mustafa hakkında kısa bilgi verir.");
+        addTerminalLine("  skills         ➔  Mustafa'nın teknik becerilerini listeler (cat skills.txt).");
+        addTerminalLine("  cat pixel      ➔  Kedi Pixel'i kontrol eder.");
+        addTerminalLine("  neofetch       ➔  Sistem ve kullanıcı bilgilerini gösterir.");
+        addTerminalLine("  matrix         ➔  Retro yeşil kod yağmuru simülasyonunu başlatır.");
+        addTerminalLine("  clear          ➔  Ekranı temizler.");
+        addTerminalLine("  exit           ➔  Terminal ekranından çıkar.");
         return;
     }
     
@@ -32,15 +83,6 @@ function handleTerminalCommand(cmd) {
         addTerminalLine("Mustafa — Geleceğin Yazılım Mühendisi & Veri Bilimcisi.");
         addTerminalLine("Açık kaynak yazılımları sever, lo-fi eşliğinde veri modelleri kurar.");
         addTerminalLine("En büyük ideali, kendi SaaS yapay zekâ girişimini hayata geçirmektir.");
-        return;
-    }
-    
-    if (cmdClean === 'skills') {
-        addTerminalLine("Yetenek Seti & Odak Noktaları:");
-        addTerminalLine("  - Languages  : Python, Go (Golang), Dart, SQL");
-        addTerminalLine("  - Databases  : MongoDB, PostgreSQL, SQLite");
-        addTerminalLine("  - Frameworks : React Native, Flutter, React.js");
-        addTerminalLine("  - Data & AI  : Pandas, NumPy, Scikit-learn, XGBoost, Prophet");
         return;
     }
     
