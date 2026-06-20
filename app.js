@@ -1,7 +1,7 @@
-import { scene, camera, renderer, controls, clock } from './js/scene.js?v=107';
-import { loadModel, animationState, rotatingObjects } from './js/loader.js?v=107';
-import { onMouseMove, onMouseClick, onTouchStart, onDoubleClick, processKeyboardMovement } from './js/interaction.js?v=107';
-import './js/terminal.js?v=107';
+import { scene, camera, renderer, controls, clock } from './js/scene.js?v=108';
+import { loadModel, animationState, rotatingObjects } from './js/loader.js?v=108';
+import { onMouseMove, onMouseClick, onTouchStart, onDoubleClick, processKeyboardMovement } from './js/interaction.js?v=108';
+import './js/terminal.js?v=108';
 
 // DOM Elements
 const loadingScreen = document.getElementById('loading-screen');
