@@ -101,13 +101,13 @@ export function findInteractiveAncestor(object) {
         }
 
         // Posterler
-        if (nameLC.includes('poster_turk_bayragi')) {
+        if (nameContains(nameLC, 'poster_turk_bayragi')) {
             return { object: current, key: 'poster_bayrak' };
         }
-        if (nameLC.includes('poster_baris_manco')) {
+        if (nameContains(nameLC, 'poster_baris_manco')) {
             return { object: current, key: 'poster_manco' };
         }
-        if (nameLC.includes('poster_yol')) {
+        if (nameContains(nameLC, 'poster_yol') || nameContains(nameLC, 'poster_neon_yol')) {
             return { object: current, key: 'poster_yol' };
         }
 
