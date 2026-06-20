@@ -246,28 +246,8 @@ export const interactiveData = {
     },
     'bilgisayar': {
         icon: '💻',
-        title: 'Üretim Merkezi & Projeler',
-        body: `
-        <div>
-            <p style="margin-bottom: 14px;">Burası fikirlerin gerçeğe dönüştüğü yer. Son dönemde üzerine çalıştığım bazı projeler:</p>
-            <ul style="display:flex; flex-direction:column; gap:10px; margin-bottom: 16px;">
-                <li style="padding:12px; background:rgba(255,255,255,0.02); border:1px solid var(--border-glass); border-radius:8px;">
-                    🌱 <strong>FarmLog:</strong> AI destekli akıllı tarım yönetim sistemi.
-                </li>
-                <li style="padding:12px; background:rgba(255,255,255,0.02); border:1px solid var(--border-glass); border-radius:8px;">
-                    🚀 <strong>Code-Verse:</strong> Uzay temalı çevrimdışı Python eğitim platformu.
-                </li>
-                <li style="padding:12px; background:rgba(255,255,255,0.02); border:1px solid var(--border-glass); border-radius:8px;">
-                    🎬 <strong>Magic Stream:</strong> Go ve MongoDB altyapılı film keşif platformu.
-                </li>
-            </ul>
-            <p style="margin-bottom: 14px; font-size: 0.9rem; color: var(--text-secondary);">Burası senin aktif olarak çalıştığın, modern yazılım projelerini sergileyeceğin yer olmalı. Projelerimi incelemek için GitHub profilime göz atabilirsiniz:</p>
-            <div style="text-align: center; margin-top: 16px;">
-                <a href="https://github.com/mustafa4341" target="_blank" class="github-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #000; font-weight: 600; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; transition: background 0.2s;">
-                    <span>🐈 GitHub Linki</span>
-                </a>
-            </div>
-        </div>`
+        title: 'Workstation',
+        body: 'Workstation — Aktif Projelerim: FarmLog (Akıllı Tarım Yönetimi), Magic Stream (Streaming Platformu), Zinciri Kırma (Alışkanlık Takip), AI Okuma ve Konuşma Platformu.'
     },
     'poster_bayrak': {
         icon: '🇹🇷',

@@ -1184,3 +1184,429 @@ body.cursor-grabbing #three-canvas {
     }
 }
 
+/* ── WORKSTATION MODAL (COMPUTER OS) ──────── */
+.workstation-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 5, 12, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.workstation-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.workstation-container {
+    position: relative;
+    width: 95%;
+    max-width: 960px;
+    height: 85vh;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 15, 30, 0.7);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 50px rgba(167, 139, 250, 0.1), 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.15) translateY(150px);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1), opacity 0.4s ease;
+}
+
+.workstation-overlay.active .workstation-container {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Header */
+.workstation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-icon {
+    font-size: 1.8rem;
+}
+
+.header-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.stat-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-badge.active {
+    border-color: rgba(110, 231, 183, 0.3);
+    background: rgba(110, 231, 183, 0.05);
+}
+
+.stat-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #a78bfa;
+}
+
+.stat-badge.active .stat-num {
+    color: #6ee7b7;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Layout */
+.workstation-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.workstation-sidebar {
+    width: 240px;
+    background: rgba(15, 23, 42, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-title {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover, .menu-item.active {
+    color: #fff;
+    background: rgba(167, 139, 250, 0.15);
+    border-left: 3px solid #a78bfa;
+    padding-left: 9px;
+}
+
+.tech-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+}
+
+.tech-tag-badge.go { border-color: rgba(0, 173, 216, 0.3); color: #00add8; }
+.tech-tag-badge.flutter { border-color: rgba(2, 86, 155, 0.3); color: #02569b; }
+.tech-tag-badge.python { border-color: rgba(255, 222, 90, 0.3); color: #ffde5a; }
+.tech-tag-badge.ai { border-color: rgba(167, 139, 250, 0.3); color: #a78bfa; }
+.tech-tag-badge.postgresql { border-color: rgba(51, 103, 145, 0.3); color: #336791; }
+.tech-tag-badge.mongodb { border-color: rgba(79, 163, 76, 0.3); color: #4fa34c; }
+.tech-tag-badge.supabase { border-color: rgba(63, 207, 142, 0.3); color: #3cfc8e; }
+
+.ai-btn-section {
+    margin-top: auto;
+}
+
+.workstation-ai-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.25) 0%, rgba(110, 231, 183, 0.25) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.workstation-ai-btn:hover {
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
+    transform: translateY(-2px);
+    border-color: rgba(167, 139, 250, 0.7);
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 14px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+/* Main Content */
+.workstation-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: rgba(10, 10, 20, 0.15);
+}
+
+.project-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+    transform: scale(1.015);
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 0 25px rgba(167, 139, 250, 0.15);
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.status-badge.ongoing {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.status-badge.live {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.project-sub-title {
+    font-size: 0.85rem;
+    color: #a78bfa;
+    margin: 0 0 14px 0;
+    font-weight: 500;
+}
+
+.project-detail-section {
+    margin-bottom: 12px;
+}
+
+.section-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.section-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.card-tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.go-badge { background: rgba(0, 173, 216, 0.1); color: #00add8; border: 1px solid rgba(0, 173, 216, 0.2); }
+.flutter-badge { background: rgba(2, 86, 155, 0.1); color: #02569b; border: 1px solid rgba(2, 86, 155, 0.2); }
+.python-badge { background: rgba(255, 222, 90, 0.1); color: #e5c122; border: 1px solid rgba(255, 222, 90, 0.2); }
+.ai-badge { background: rgba(167, 139, 250, 0.1); color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.2); }
+.postgresql-badge { background: rgba(51, 103, 145, 0.1); color: #336791; border: 1px solid rgba(51, 103, 145, 0.2); }
+.mongodb-badge { background: rgba(79, 163, 76, 0.1); color: #4fa34c; border: 1px solid rgba(79, 163, 76, 0.2); }
+.supabase-badge { background: rgba(63, 207, 142, 0.1); color: #3cfc8e; border: 1px solid rgba(63, 207, 142, 0.2); }
+.html-badge { background: rgba(227, 79, 38, 0.1); color: #e34f26; border: 1px solid rgba(227, 79, 38, 0.2); }
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-action-btn {
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.card-action-btn.github {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card-action-btn.github:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive grid/flex for Mobile Workstation */
+@media (max-width: 768px) {
+    .workstation-container {
+        height: 90vh;
+        max-height: 90vh;
+    }
+    
+    .workstation-layout {
+        flex-direction: column;
+    }
+    
+    .workstation-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        height: 180px;
+        flex-shrink: 0;
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+    
+    .menu-item {
+        white-space: nowrap;
+    }
+    
+    .ai-btn-section {
+        margin-top: 0;
+    }
+    
+    .sidebar-footer {
+        flex-direction: row;
+        gap: 12px;
+        padding-top: 8px;
+    }
+}
+
+

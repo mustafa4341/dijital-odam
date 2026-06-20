@@ -40,6 +40,9 @@ const yatakModal = document.getElementById('yatak-modal');
 const yatakClose = document.getElementById('yatak-close');
 const fadeOverlay = document.getElementById('fade-overlay');
 
+const workstationModal = document.getElementById('workstation-modal');
+const workstationClose = document.getElementById('workstation-close');
+
 // ── OPEN / CLOSE MODAL ─────────────────────────
 export function openModal(key) {
     if (isBlockingClicks) return;
@@ -58,6 +61,10 @@ export function openModal(key) {
     }
     if (key === 'yatak') {
         openYatakModal();
+        return;
+    }
+    if (key === 'bilgisayar') {
+        openWorkstationModal();
         return;
     }
 
@@ -247,6 +254,34 @@ export function closeYatakModal() {
     }
 }
 
+// ── WORKSTATION MODAL ─────────────────────────
+export function openWorkstationModal() {
+    if (isBlockingClicks) return;
+    currentActiveModalKey = 'bilgisayar';
+    stopAllAudio();
+    
+    if (workstationModal) {
+        workstationModal.classList.add('active');
+        isModalOpen = true;
+        controls.enabled = false;
+        if (tooltip) tooltip.classList.remove('visible');
+    }
+}
+
+export function closeWorkstationModal() {
+    stopAllAudio();
+    if (workstationModal) {
+        workstationModal.classList.remove('active');
+        isModalOpen = false;
+        currentActiveModalKey = null;
+    }
+    isBlockingClicks = true;
+    setTimeout(() => {
+        isBlockingClicks = false;
+    }, 400);
+    controls.enabled = true;
+}
+
 // ── DYNAMIC CONTENT INITIALIZERS ──────────────
 function initDynamicContent(key) {
     if (key === 'kedi') {
@@ -432,6 +467,65 @@ if (yatakModal) {
     }, { passive: false });
 }
 
+if (workstationClose) {
+    workstationClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeWorkstationModal();
+    });
+    workstationClose.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeWorkstationModal();
+    }, { passive: false });
+}
+if (workstationModal) {
+    workstationModal.addEventListener('click', (e) => {
+        if (e.target === workstationModal) {
+            e.stopPropagation();
+            closeWorkstationModal();
+        }
+    });
+    workstationModal.addEventListener('touchstart', (e) => {
+        if (e.target === workstationModal) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeWorkstationModal();
+        }
+    }, { passive: false });
+}
+
+// Workstation Sidebar Menu scrolling
+const menuItems = document.querySelectorAll('.workstation-sidebar .menu-item');
+menuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = item.dataset.target;
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        if (target === 'all') {
+            const scrollArea = document.querySelector('.workstation-content');
+            if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const card = document.getElementById(`card-${target}`);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+});
+
+const workstationAiBtn = document.getElementById('workstation-ai-btn');
+if (workstationAiBtn) {
+    workstationAiBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeWorkstationModal();
+        setTimeout(() => {
+            openAIChatModal();
+        }, 300);
+    });
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (isModalOpen) {
@@ -439,6 +533,7 @@ document.addEventListener('keydown', (e) => {
             closeAIChatModal();
             closeTerminalModal();
             closeYatakModal();
+            closeWorkstationModal();
         }
     }
 });

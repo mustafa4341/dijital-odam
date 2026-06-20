@@ -74,6 +74,214 @@
         </div>
     </div>
 
+    <!-- ═══════════ WORKSTATION (PC) MODAL ═══════════ -->
+    <div id="workstation-modal" class="modal-overlay workstation-overlay">
+        <div class="modal-container workstation-container">
+            <button class="modal-close" id="workstation-close" aria-label="Kapat">&times;</button>
+            
+            <!-- Workstation OS Header -->
+            <div class="workstation-header">
+                <div class="header-left">
+                    <span class="header-icon">🖥️</span>
+                    <div>
+                        <h2 class="header-title">Workstation</h2>
+                        <span class="header-subtitle">Aktif Projelerim</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="stat-badge">
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">Toplam Proje</span>
+                    </div>
+                    <div class="stat-badge active">
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">Aktif</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workstation OS Layout -->
+            <div class="workstation-layout">
+                <!-- Sidebar -->
+                <div class="workstation-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">📂 Menü</h3>
+                        <ul class="sidebar-menu">
+                            <li class="menu-item active" data-target="all">
+                                <span>🌐 Tüm Projeler</span>
+                            </li>
+                            <li class="menu-item" data-target="farmlog">
+                                <span>🌱 FarmLog</span>
+                            </li>
+                            <li class="menu-item" data-target="magicstream">
+                                <span>🎬 Magic Stream</span>
+                            </li>
+                            <li class="menu-item" data-target="zincirikirma">
+                                <span>🔗 Zinciri Kırma</span>
+                            </li>
+                            <li class="menu-item" data-target="aireader">
+                                <span>📖 AI Okuma/Konuşma</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">⚙️ Teknolojiler</h3>
+                        <div class="tech-tag-cloud">
+                            <span class="tech-tag-badge go">Go</span>
+                            <span class="tech-tag-badge flutter">Flutter</span>
+                            <span class="tech-tag-badge python">Python</span>
+                            <span class="tech-tag-badge ai">AI</span>
+                            <span class="tech-tag-badge postgresql">PostgreSQL</span>
+                            <span class="tech-tag-badge mongodb">MongoDB</span>
+                            <span class="tech-tag-badge supabase">Supabase</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section ai-btn-section">
+                        <button class="workstation-ai-btn" id="workstation-ai-btn">
+                            <span>🤖 AI Assistant</span>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-footer">
+                        <a href="https://github.com/mustafa4341" target="_blank" class="footer-link">
+                            <span>🐙 GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mustafa-karsu-55b349328/" target="_blank" class="footer-link">
+                            <span>💼 LinkedIn</span>
+                        </a>
+                        <a href="mailto:mmustafa.karsuu@gmail.com" class="footer-link">
+                            <span>📧 İletişim</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="workstation-content">
+                    <div class="project-cards-list">
+                        
+                        <!-- Project 1: FarmLog -->
+                        <div class="project-card" id="card-farmlog">
+                            <div class="card-header-row">
+                                <h4 class="project-title">🌱 FarmLog</h4>
+                                <span class="status-badge ongoing">Devam Ediyor</span>
+                            </div>
+                            <h5 class="project-sub-title">Yapay Zeka Destekli Akıllı Tarım Yönetim Sistemi</h5>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📋 Proje Detayı:</strong>
+                                <p class="section-text">Tarımsal süreçleri optimize etmek ve sahadaki verimliliği artırmak amacıyla geliştirilen akıllı bir yönetim platformu.</p>
+                            </div>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📊 Veri ve Mimari Hedefleri:</strong>
+                                <p class="section-text">Tarımsal verileri işleyerek XGBoost ve Prophet gibi makine öğrenmesi algoritmalarıyla zaman serisi analizleri gerçekleştirmek. Sistemin veri işleme hatlarını (pipeline) kurarak, elde edilen veriler üzerinden öngörücü modelleme yapmak ve proaktif bir karar destek mekanizması oluşturmak.</p>
+                            </div>
+                            
+                            <div class="card-tech-badges">
+                                <span class="badge go-badge">Go</span>
+                                <span class="badge flutter-badge">Flutter</span>
+                                <span class="badge postgresql-badge">PostgreSQL</span>
+                                <span class="badge ai-badge">AI</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://github.com/mustafa4341" target="_blank" class="card-action-btn github">GitHub</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Magic Stream -->
+                        <div class="project-card" id="card-magicstream">
+                            <div class="card-header-row">
+                                <h4 class="project-title">🎬 Magic Stream</h4>
+                                <span class="status-badge live">Yayında</span>
+                            </div>
+                            <h5 class="project-sub-title">Full-Stack Film Keşif Platformu</h5>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📋 Proje Detayı:</strong>
+                                <p class="section-text">Kullanıcıların yeni içerikler keşfetmesini ve fragmanları izlemesini sağlayan, Go ve MongoDB altyapısıyla inşa edilmiş kapsamlı bir streaming platformu.</p>
+                            </div>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📊 Veri ve Mimari Hedefleri:</strong>
+                                <p class="section-text">MongoDB üzerinde yapılandırılan geniş çaplı film veritabanlarını verimli bir şekilde yönetmek. Go dilinin eşzamanlılık (concurrency) gücünü kullanarak veri mühendisliği prensiplerine uygun, yüksek performanslı ve ölçeklenebilir backend sistemleri tasarlamak; yoğun veri akışının sorunsuz bir şekilde işlenmesini sağlamak.</p>
+                            </div>
+                            
+                            <div class="card-tech-badges">
+                                <span class="badge go-badge">Go</span>
+                                <span class="badge mongodb-badge">MongoDB</span>
+                                <span class="badge html-badge">HTML/CSS/JS</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://github.com/mustafa4341" target="_blank" class="card-action-btn github">GitHub</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Zinciri Kırma -->
+                        <div class="project-card" id="card-zincirikirma">
+                            <div class="card-header-row">
+                                <h4 class="project-title">🔗 Zinciri Kırma</h4>
+                                <span class="status-badge ongoing">Devam Ediyor</span>
+                            </div>
+                            <h5 class="project-sub-title">Veri Odaklı Alışkanlık Takip Platformu</h5>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📋 Proje Detayı:</strong>
+                                <p class="section-text">Kullanıcıların günlük hedeflerini sürdürmelerini ve üretkenliklerini "zinciri kırma" metodolojisiyle yönetmelerini sağlayan, performans odaklı bir takip uygulaması.</p>
+                            </div>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📊 Veri ve Mimari Hedefleri:</strong>
+                                <p class="section-text">Kullanıcı etkileşim ve log verilerini zaman serisi formatında işleyerek alışkanlık kazanma ve sürdürme eğilimlerini analiz etmek. Veri bilimi tekniklerini kullanarak kullanıcıların uygulamayı bırakma (drop-off) noktalarını tahmin eden modeller geliştirmek ve yoğun veri yazma/okuma işlemlerini optimum performansla yönetecek veri altyapısını tasarlamak.</p>
+                            </div>
+                            
+                            <div class="card-tech-badges">
+                                <span class="badge go-badge">Go</span>
+                                <span class="badge postgresql-badge">PostgreSQL</span>
+                                <span class="badge python-badge">Python</span>
+                                <span class="badge ai-badge">AI</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://github.com/mustafa4341" target="_blank" class="card-action-btn github">GitHub</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: AI Okuma ve Konuşma -->
+                        <div class="project-card" id="card-aireader">
+                            <div class="card-header-row">
+                                <h4 class="project-title">📖 AI Okuma ve Konuşma</h4>
+                                <span class="status-badge ongoing">Devam Ediyor</span>
+                            </div>
+                            <h5 class="project-sub-title">AI Destekli İngilizce Okuma ve Konuşma Platformu</h5>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📋 Proje Detayı:</strong>
+                                <p class="section-text">Kullanıcıların İngilizce metinleri etkileşimli bir okuyucu (reader) üzerinden takip edebildiği; kullanıcı yetkilendirme (auth) ve premium abonelik sistemleri içeren, Supabase altyapısıyla geliştirilmiş kapsamlı bir dil öğrenme uygulaması.</p>
+                            </div>
+                            
+                            <div class="project-detail-section">
+                                <strong class="section-label">📊 Veri ve Mimari Hedefleri:</strong>
+                                <p class="section-text">Supabase üzerinde kullanıcı etkileşimlerini, auth süreçlerini ve premium katman verilerini ölçeklenebilir bir şekilde yönetecek veri mimarilerini tasarlamak. Yapay zeka algoritmalarını kullanarak ses işleme (speech processing) boru hatları (pipelines) kurmak; bu sayede kullanıcıların konuşma verilerini analiz ederek fonetik çıkarımlar yapan ve telaffuz iyileştirmesi sağlayan veri odaklı modelleri sisteme entegre etmek.</p>
+                            </div>
+                            
+                            <div class="card-tech-badges">
+                                <span class="badge python-badge">Python</span>
+                                <span class="badge ai-badge">AI</span>
+                                <span class="badge supabase-badge">Supabase</span>
+                                <span class="badge flutter-badge">Flutter</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://github.com/mustafa4341" target="_blank" class="card-action-btn github">GitHub</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ═══════════ AI CHAT MODAL ═══════════ -->
     <div id="ai-chat-modal" class="modal-overlay">
         <div class="modal-container ai-chat-container">
