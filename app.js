@@ -43,6 +43,8 @@ window.addEventListener('dblclick', onDoubleClick, false);
 const canvas = document.getElementById('three-canvas');
 if (canvas) {
     canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+    canvas.addEventListener('dragstart', (e) => e.preventDefault());
+    canvas.addEventListener('selectstart', (e) => e.preventDefault());
 }
 
 // Animation Render Loop

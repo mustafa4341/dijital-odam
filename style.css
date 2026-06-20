@@ -63,6 +63,11 @@ html, body {
     left: 0;
     z-index: 1;
     outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* ── LOADING SCREEN ───────────────────────── */

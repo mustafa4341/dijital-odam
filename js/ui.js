@@ -297,7 +297,7 @@ function initDynamicContent(key) {
         const genrePlaylists = {
             lofi: "37i9dQZF1DWWQRwui0ExPn",
             my_list: "46jrKdjHELOlhyUjicNdyN",
-            classical: "37i9dQZF1DWWEJl2yvj5qy"
+            classical: "37i9dQZF1DWV7EzJMK2F7S"
         };
         
         cards.forEach(card => {
