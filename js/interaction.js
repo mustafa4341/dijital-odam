@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import { scene, camera, controls } from './scene.js?v=105';
-import { allMeshes, roomBounds } from './loader.js?v=105';
-import { interactiveData } from './config.js?v=105';
-import { openModal, isModalOpen, tooltip, isBlockingClicks } from './ui.js?v=105';
+import { scene, camera, controls } from './scene.js?v=106';
+import { allMeshes, roomBounds } from './loader.js?v=106';
+import { interactiveData } from './config.js?v=106';
+import { openModal, isModalOpen, tooltip, isBlockingClicks } from './ui.js?v=106';
 
 export const mouse = new THREE.Vector2();
 const raycaster = new THREE.Raycaster();
@@ -13,6 +13,17 @@ const keysPressed = {};
 const velocity = new THREE.Vector3(0, 0, 0);
 const friction = 0.95;
 const modelScale = 11.4;
+
+const nameContains = (name, pattern) => {
+    if (!name) return false;
+    const nameLC = name.toLowerCase();
+    const patternLC = pattern.toLowerCase();
+    return (
+        nameLC.includes(patternLC) ||
+        nameLC.includes(patternLC.replace('.', '_')) ||
+        nameLC.includes(patternLC.replace('.', ''))
+    );
+};
 
 // ── GET INTERACTIVE ANCESTOR (Whitelist only) ───
 export function findInteractiveAncestor(object) {
@@ -26,7 +37,7 @@ export function findInteractiveAncestor(object) {
         }
         
         // Yerdeki Eski Bilgisayar (Terminal)
-        if (nameLC.includes('sketchfab_model.012') || nameLC.includes('lowpolypsxoldpc') || nameLC.includes('keyboarde') || nameLC.includes('monitor plainde') || nameLC.includes('mousede') || nameLC.includes('cpu plainde')) {
+        if (nameContains(nameLC, 'sketchfab_model.012') || nameLC.includes('lowpolypsxoldpc') || nameLC.includes('keyboarde') || nameLC.includes('monitor plainde') || nameLC.includes('mousede') || nameLC.includes('cpu plainde')) {
             return { object: current, key: 'eski_bilgisayar' };
         }
         
@@ -36,12 +47,12 @@ export function findInteractiveAncestor(object) {
         }
 
         // Hoparlörler
-        if (nameLC.includes('cube.007') || nameLC.includes('cube007') || nameLC.includes('cube.008') || nameLC.includes('cube008') || nameLC === 'circle' || nameLC === 'circle.001') {
+        if (nameContains(nameLC, 'cube.007') || nameContains(nameLC, 'cube.008') || nameLC === 'circle' || nameLC === 'circle.001') {
             return { object: current, key: 'hoparlor' };
         }
 
         // Yatak
-        if (nameLC.includes('plane.001') || nameLC.includes('plane001') || nameLC.includes('plane.002') || nameLC.includes('plane002') || nameLC.includes('plane.004') || nameLC.includes('plane004') || nameLC.includes('plane.005') || nameLC.includes('plane005') || nameLC.includes('plane.006') || nameLC.includes('plane006')) {
+        if (nameContains(nameLC, 'plane.001') || nameContains(nameLC, 'plane.002') || nameContains(nameLC, 'plane.004') || nameContains(nameLC, 'plane.005') || nameContains(nameLC, 'plane.006')) {
             return { object: current, key: 'yatak' };
         }
 
@@ -56,7 +67,7 @@ export function findInteractiveAncestor(object) {
         }
 
         // Dünya (Doğa & Keşif)
-        if (nameLC.includes('globe.002') || nameLC.includes('globe_objet_0') || nameLC === 'sphere' || nameLC === 'sphere.001') {
+        if (nameContains(nameLC, 'globe.002') || nameContains(nameLC, 'globe_objet_0') || nameLC === 'sphere' || nameLC === 'sphere.001') {
             return { object: current, key: 'dunya' };
         }
 
@@ -81,11 +92,11 @@ export function findInteractiveAncestor(object) {
         }
 
         // Masaüstü Bilgisayar (Ekran, Klavye, Kasa vb.)
-        if (nameLC.includes('cube.010') || nameLC.includes('cube010') || 
-            nameLC.includes('plane.027') || nameLC.includes('plane.019') || 
-            nameLC.includes('plane.017') || nameLC.includes('plane.025') ||
-            nameLC.includes('plane.016') || nameLC.includes('plane.024') ||
-            nameLC.includes('plane.015') || nameLC.includes('plane.023')) {
+        if (nameContains(nameLC, 'cube.010') || 
+            nameContains(nameLC, 'plane.027') || nameContains(nameLC, 'plane.019') || 
+            nameContains(nameLC, 'plane.017') || nameContains(nameLC, 'plane.025') ||
+            nameContains(nameLC, 'plane.016') || nameContains(nameLC, 'plane.024') ||
+            nameContains(nameLC, 'plane.015') || nameContains(nameLC, 'plane.023')) {
             return { object: current, key: 'bilgisayar' };
         }
 

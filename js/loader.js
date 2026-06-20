@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-import { scene } from './scene.js?v=105';
+import { scene } from './scene.js?v=106';
 
 export const animationState = { mixer: null };
 export const rotatingObjects = [];

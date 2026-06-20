@@ -1,4 +1,4 @@
-import { closeTerminalModal } from './ui.js?v=105';
+import { closeTerminalModal } from './ui.js?v=106';
 
 function handleTerminalCommand(cmd) {
     addTerminalLine(`mustafa@dijital-oda:~$ ${cmd}`, 'user');
