@@ -159,43 +159,92 @@ export function closeAIChatModal() {
 
 // ── STARRY FUTURE GOALS MODAL (Yatak) ───────────
 export function openYatakModal() {
-    if (isBlockingClicks) return;
-    closeModal();
-    
-    isBlockingClicks = true;
-    if (fadeOverlay) fadeOverlay.classList.add('active');
-    
-    setTimeout(() => {
-        if (yatakModal) yatakModal.classList.add('active');
-        isModalOpen = true;
-        controls.enabled = false;
-        tooltip.classList.remove('visible');
-        
-        if (fadeOverlay) fadeOverlay.classList.remove('active');
+    console.log("openYatakModal called");
+    if (isBlockingClicks) {
+        console.log("Clicks blocked, returning");
+        return;
+    }
+    try {
+        closeModal();
+        isBlockingClicks = true;
+        if (fadeOverlay) {
+            console.log("Activating fadeOverlay");
+            fadeOverlay.classList.add('active');
+        } else {
+            console.warn("fadeOverlay is null");
+        }
         
         setTimeout(() => {
-            isBlockingClicks = false;
+            try {
+                if (yatakModal) {
+                    console.log("Activating yatakModal");
+                    yatakModal.classList.add('active');
+                } else {
+                    console.warn("yatakModal is null");
+                }
+                isModalOpen = true;
+                controls.enabled = false;
+                if (tooltip) tooltip.classList.remove('visible');
+                
+                if (fadeOverlay) {
+                    console.log("Deactivating fadeOverlay");
+                    fadeOverlay.classList.remove('active');
+                }
+            } catch (err) {
+                console.error("Error in openYatakModal transition timeout:", err);
+            } finally {
+                setTimeout(() => {
+                    isBlockingClicks = false;
+                    console.log("isBlockingClicks set to false (open)");
+                }, 800);
+            }
         }, 800);
-    }, 800);
+    } catch (e) {
+        console.error("Error in openYatakModal:", e);
+        isBlockingClicks = false;
+    }
 }
 
 export function closeYatakModal() {
-    if (isBlockingClicks) return;
-    
-    isBlockingClicks = true;
-    if (fadeOverlay) fadeOverlay.classList.add('active');
-    
-    setTimeout(() => {
-        if (yatakModal) yatakModal.classList.remove('active');
-        isModalOpen = false;
-        
-        if (fadeOverlay) fadeOverlay.classList.remove('active');
+    console.log("closeYatakModal called");
+    if (isBlockingClicks) {
+        console.log("Clicks blocked, returning (close)");
+        return;
+    }
+    try {
+        isBlockingClicks = true;
+        if (fadeOverlay) {
+            console.log("Activating fadeOverlay (close)");
+            fadeOverlay.classList.add('active');
+        }
         
         setTimeout(() => {
-            isBlockingClicks = false;
-            controls.enabled = true;
+            try {
+                if (yatakModal) {
+                    console.log("Deactivating yatakModal");
+                    yatakModal.classList.remove('active');
+                }
+                isModalOpen = false;
+                
+                if (fadeOverlay) {
+                    console.log("Deactivating fadeOverlay (close)");
+                    fadeOverlay.classList.remove('active');
+                }
+            } catch (err) {
+                console.error("Error in closeYatakModal transition timeout:", err);
+            } finally {
+                setTimeout(() => {
+                    isBlockingClicks = false;
+                    controls.enabled = true;
+                    console.log("isBlockingClicks set to false (close)");
+                }, 800);
+            }
         }, 800);
-    }, 800);
+    } catch (e) {
+        console.error("Error in closeYatakModal:", e);
+        isBlockingClicks = false;
+        controls.enabled = true;
+    }
 }
 
 // ── DYNAMIC CONTENT INITIALIZERS ──────────────
