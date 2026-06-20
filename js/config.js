@@ -302,26 +302,24 @@ export const interactiveData = {
     },
     'poster_yol': {
         icon: '🗺️',
-        title: 'İlham ve Yolculuğum',
+        title: 'Yazılım Yolculuğum',
         body: `
         <div>
-            <p style="margin-bottom:16px;">Kişisel ve teknik gelişim haritam, synthwave estetiğinde parıldayan bir yolculuktur:</p>
+            <p style="margin-bottom:18px; font-style: italic; color: #a78bfa; line-height: 1.6;">
+                "Bu yol, yazılım öğrenme sürecimi temsil ediyor. Başlangıçta C# ile başladım, sonra Go, Flutter ve veri alanlarına yöneldim. Yolun sonu görünmüyor çünkü öğrenme süreci hiç bitmiyor."
+            </p>
             <div class="timeline-list">
                 <div class="timeline-item">
-                    <div class="timeline-year">Aşama 1: İlham & Temeller (Web)</div>
-                    <div class="timeline-desc">HTML5, CSS3, Vanilla JS. Açık kaynak kod dünyasına adım atılması ve Linux ile tanışma.</div>
+                    <div class="timeline-year">Ortaokul</div>
+                    <div class="timeline-desc">Yazılıma duyulan ilk büyük merak ve temel C# programlama dili ile ilk kodlama denemeleri.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">Aşama 2: Geliştirme (Frontend & Mobile)</div>
-                    <div class="timeline-desc">React ve React Native ile mobil arayüzler kurma. Modern API entegrasyonları.</div>
+                    <div class="timeline-year">Lise</div>
+                    <div class="timeline-desc">Backend tarafında Go (Golang) ve mobil geliştirme tarafında Flutter teknolojileri ile tanışma ve projeler geliştirme.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">Aşama 3: Veri & Arka Plan (Go & Python)</div>
-                    <div class="timeline-desc">Go & MongoDB kullanarak backend geliştirme, Python ile veri bilimi çalışmaları.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">Aşama 4: Gelecek (AI & Data Engineering)</div>
-                    <div class="timeline-desc">Zaman serisi tahminleme modelleri kurma, makine öğrenmesi uygulamaları (XGBoost, Prophet).</div>
+                    <div class="timeline-year">Üniversite</div>
+                    <div class="timeline-desc">Veri bilimi ve veri mühendisliği alanlarına yönelme; Python, makine öğrenmesi ve veri analitiği üzerine yoğunlaşma.</div>
                 </div>
             </div>
         </div>`

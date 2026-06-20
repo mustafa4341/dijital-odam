@@ -1076,3 +1076,69 @@ body.cursor-grabbing #three-canvas {
     }
 }
 
+/* ── FADE TO BLACK OVERLAY ────────────────── */
+#fade-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out;
+}
+#fade-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ── STARRY FUTURE GOALS MODAL ────────────── */
+.yatak-modal-overlay {
+    background: #000 !important;
+}
+
+.yatak-modal-overlay .yatak-container {
+    border-color: rgba(167, 139, 250, 0.25);
+    background: rgba(10, 10, 20, 0.75);
+}
+
+.starry-background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #050512 0%, #000000 100%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.starry-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(167, 139, 250, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(110, 231, 183, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.stars-1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 200px 300px #FFF, 400px 100px #FFF, 800px 400px #FFF, 1200px 200px #FFF, 1500px 600px #FFF, 600px 800px #FFF, 100px 700px #FFF, 1000px 800px #FFF, 1300px 900px #FFF, 300px 500px #FFF, 700px 150px #FFF, 1100px 700px #FFF;
+    animation: twinkle 4s infinite alternate;
+}
+
+.stars-2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 150px 250px #FFF, 350px 150px #FFF, 750px 450px #FFF, 1150px 250px #FFF, 1450px 650px #FFF, 550px 750px #FFF, 950px 850px #FFF, 250px 450px #FFF, 650px 250px #FFF, 1350px 550px #FFF;
+    animation: twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 1.0; }
+    100% { opacity: 0.3; }
+}
+

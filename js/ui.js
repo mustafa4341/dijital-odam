@@ -36,6 +36,10 @@ const aiChatInput = document.getElementById('ai-chat-input');
 const terminalModal = document.getElementById('terminal-modal');
 const terminalClose = document.getElementById('terminal-close');
 
+const yatakModal = document.getElementById('yatak-modal');
+const yatakClose = document.getElementById('yatak-close');
+const fadeOverlay = document.getElementById('fade-overlay');
+
 // ── OPEN / CLOSE MODAL ─────────────────────────
 export function openModal(key) {
     if (isBlockingClicks) return;
@@ -50,6 +54,10 @@ export function openModal(key) {
     }
     if (key === 'robot_ai') {
         openAIChatModal();
+        return;
+    }
+    if (key === 'yatak') {
+        openYatakModal();
         return;
     }
 
@@ -147,6 +155,47 @@ export function closeAIChatModal() {
         isBlockingClicks = false;
     }, 400);
     controls.enabled = true;
+}
+
+// ── STARRY FUTURE GOALS MODAL (Yatak) ───────────
+export function openYatakModal() {
+    if (isBlockingClicks) return;
+    closeModal();
+    
+    isBlockingClicks = true;
+    if (fadeOverlay) fadeOverlay.classList.add('active');
+    
+    setTimeout(() => {
+        if (yatakModal) yatakModal.classList.add('active');
+        isModalOpen = true;
+        controls.enabled = false;
+        tooltip.classList.remove('visible');
+        
+        if (fadeOverlay) fadeOverlay.classList.remove('active');
+        
+        setTimeout(() => {
+            isBlockingClicks = false;
+        }, 800);
+    }, 800);
+}
+
+export function closeYatakModal() {
+    if (isBlockingClicks) return;
+    
+    isBlockingClicks = true;
+    if (fadeOverlay) fadeOverlay.classList.add('active');
+    
+    setTimeout(() => {
+        if (yatakModal) yatakModal.classList.remove('active');
+        isModalOpen = false;
+        
+        if (fadeOverlay) fadeOverlay.classList.remove('active');
+        
+        setTimeout(() => {
+            isBlockingClicks = false;
+            controls.enabled = true;
+        }, 800);
+    }, 800);
 }
 
 // ── DYNAMIC CONTENT INITIALIZERS ──────────────
@@ -307,12 +356,40 @@ if (modalAiAsk) {
     modalAiAsk.addEventListener('click', openAIChatModal);
 }
 
+if (yatakClose) {
+    yatakClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeYatakModal();
+    });
+    yatakClose.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeYatakModal();
+    }, { passive: false });
+}
+if (yatakModal) {
+    yatakModal.addEventListener('click', (e) => {
+        if (e.target === yatakModal) {
+            e.stopPropagation();
+            closeYatakModal();
+        }
+    });
+    yatakModal.addEventListener('touchstart', (e) => {
+        if (e.target === yatakModal) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeYatakModal();
+        }
+    }, { passive: false });
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (isModalOpen) {
             closeModal();
             closeAIChatModal();
             closeTerminalModal();
+            closeYatakModal();
         }
     }
 });
