@@ -198,7 +198,7 @@ function initDynamicContent(key) {
         
         const genrePlaylists = {
             lofi: "37i9dQZF1DWWQRwui0ExPn",
-            synthwave: "37i9dQZF1DXdLTE75A7KXC",
+            my_list: "46jrKdjHELOlhyUjicNdyN",
             classical: "37i9dQZF1DWWEJl2yvj5qy"
         };
         

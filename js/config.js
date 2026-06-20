@@ -65,13 +65,13 @@ export const interactiveData = {
                     <span class="genre-icon">🎧</span>
                     <span class="genre-name">Lo-fi</span>
                 </div>
-                <div class="genre-card" data-genre="synthwave">
+                <div class="genre-card" data-genre="my_list">
                     <span class="genre-icon">🎸</span>
-                    <span class="genre-name">Synthwave</span>
+                    <span class="genre-name">Benim Listem</span>
                 </div>
                 <div class="genre-card" data-genre="classical">
                     <span class="genre-icon">🎹</span>
-                    <span class="genre-name">Classical</span>
+                    <span class="genre-name">Klasik</span>
                 </div>
             </div>
             
