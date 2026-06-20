@@ -1144,3 +1144,38 @@ body.cursor-grabbing #three-canvas {
     100% { opacity: 0.3; }
 }
 
+/* ── SHOOTING STARS ───────────────────────── */
+.shooting-star {
+    position: absolute;
+    top: var(--star-top);
+    left: var(--star-left);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.8)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
+    opacity: 0;
+    transform: rotate(45deg) scaleX(0);
+    transform-origin: left;
+    pointer-events: none;
+    animation: shooting var(--star-duration) var(--star-delay) ease-in-out infinite;
+}
+
+@keyframes shooting {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate3d(0, 0, 0) scaleX(0);
+    }
+    10% {
+        opacity: 1;
+        transform: rotate(45deg) translate3d(0, 0, 0) scaleX(1.2);
+    }
+    30% {
+        opacity: 0;
+        transform: rotate(45deg) translate3d(400px, 400px, 0) scaleX(0.1);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate3d(400px, 400px, 0) scaleX(0);
+    }
+}
+
