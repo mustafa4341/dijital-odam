@@ -55,6 +55,19 @@ Etkileşimi güçlendiren ses tasarımları:
 
 ---
 
+## 🤖 Yapay Zekâ (Gemini AI) Entegrasyonu & Kullanımı
+
+Projede yer alan **Mustafa'nın AI Asistanı**, Google'ın güçlü yapay zekâ modeli olan **Gemini 2.5 Flash** API'si ile doğrudan entegre çalışır. Ziyaretçilerin Mustafa hakkında sorduğu sorulara anlık ve anlamlı yanıtlar üretilmesini sağlar.
+
+### ⚙️ Çalışma Mantığı ve Teknik Yapı:
+* **Client-Side İstekler:** Yapay zekâ sorguları, tarayıcı üzerinden doğrudan Google Generative Language API (`https://generativelanguage.googleapis.com`) uç noktasına (`generateContent`) gönderilir.
+* **Sistem Promptu (System Instruction):** AI asistanının karakteri, davranış biçimi ve Mustafa hakkındaki tüm veriler (bildiği diller, projeleri, doğa yürüyüşü ve kamp hobileri, kedisi Pixel vb.) [js/config.js](file:///c:/Users/mmust/Desktop/internet%20proje/js/config.js) dosyasındaki sistem promptu ile önceden tanımlanmıştır. Asistan bu talimatlar doğrultusunda konuşur.
+* **Dinamik Ayarlar ve LocalStorage:**
+  * Geliştiriciler veya kullanıcılar, sohbet penceresindeki ayarlar panelini kullanarak kendi **Gemini API Anahtarını** ve **Sistem Talimatlarını** dinamik olarak güncelleyebilir.
+  * Yapılan bu güncellemeler tarayıcının `localStorage` (yerel depolama) alanında (`gemini_api_key` ve `gemini_system_prompt` anahtarları altında) kalıcı olarak saklanır, böylece sayfa tekrar açıldığında ayarlar korunmuş olur.
+
+---
+
 ## 🛠️ Kullanılan Teknolojiler
 
 * **3D Grafik:** Three.js (WebGL 3D engine) & GLTFLoader
