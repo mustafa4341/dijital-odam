@@ -1381,6 +1381,7 @@ body.cursor-grabbing #three-canvas {
 .tech-tag-badge.postgresql { border-color: rgba(51, 103, 145, 0.3); color: #336791; }
 .tech-tag-badge.mongodb { border-color: rgba(79, 163, 76, 0.3); color: #4fa34c; }
 .tech-tag-badge.supabase { border-color: rgba(63, 207, 142, 0.3); color: #3cfc8e; }
+.tech-tag-badge.sqlite { border-color: rgba(0, 59, 87, 0.4); color: #008bf7; }
 
 .ai-btn-section {
     margin-top: auto;
@@ -1540,6 +1541,7 @@ body.cursor-grabbing #three-canvas {
 .postgresql-badge { background: rgba(51, 103, 145, 0.1); color: #336791; border: 1px solid rgba(51, 103, 145, 0.2); }
 .mongodb-badge { background: rgba(79, 163, 76, 0.1); color: #4fa34c; border: 1px solid rgba(79, 163, 76, 0.2); }
 .supabase-badge { background: rgba(63, 207, 142, 0.1); color: #3cfc8e; border: 1px solid rgba(63, 207, 142, 0.2); }
+.sqlite-badge { background: rgba(0, 59, 87, 0.1); color: #008bf7; border: 1px solid rgba(0, 59, 87, 0.2); }
 .html-badge { background: rgba(227, 79, 38, 0.1); color: #e34f26; border: 1px solid rgba(227, 79, 38, 0.2); }
 
 .card-actions {
