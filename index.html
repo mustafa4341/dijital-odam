@@ -325,12 +325,26 @@
             <button class="modal-close" id="ai-chat-close" aria-label="Kapat">&times;</button>
             <div class="modal-header">
                 <span class="modal-icon">🤖</span>
-                <div>
+                <div style="flex: 1;">
                     <h2 class="modal-title">Mustafa'nın AI Asistanı</h2>
                     <span class="ai-status"><span class="status-dot"></span> Çevrimiçi</span>
                 </div>
+                <button id="ai-settings-toggle" class="ai-settings-btn" title="Ayarlar">⚙️</button>
             </div>
             <div class="ai-chat-body">
+                <!-- API Key Configuration Panel -->
+                <div class="api-key-container" id="api-key-container">
+                    <p class="api-key-desc">Kendi Gemini API anahtarınızı ve özel sistem promptunuzu tanımlayarak asistanı özelleştirin.</p>
+                    <div class="api-key-input-row" style="margin-bottom: 10px;">
+                        <input type="password" id="api-key-input" placeholder="Gemini API Key (AI...)" />
+                    </div>
+                    <div class="api-key-input-row" style="margin-bottom: 10px; flex-direction: column; align-items: stretch;">
+                        <textarea id="api-prompt-input" rows="4" style="background:#090d16; border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px 12px; color:#fff; font-size:0.85rem; resize:vertical; font-family:inherit;" placeholder="Sistem talimatı..."></textarea>
+                    </div>
+                    <div class="api-key-input-row" style="justify-content: flex-end; margin-bottom: 5px;">
+                        <button id="api-key-save">Kaydet</button>
+                    </div>
+                </div>
                 
                 
                 <div class="ai-messages" id="ai-messages">

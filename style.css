@@ -525,6 +525,25 @@ body.cursor-grabbing #three-canvas {
     margin-bottom: 12px;
 }
 
+.ai-settings-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    color: var(--text-secondary);
+    transition: color 0.2s, transform 0.2s;
+    margin-right: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-settings-btn:hover {
+    color: #4f8ef7 !important;
+    transform: rotate(30deg);
+}
+
 /* API Key setup styling */
 .api-key-container {
     background: #0f172a;
